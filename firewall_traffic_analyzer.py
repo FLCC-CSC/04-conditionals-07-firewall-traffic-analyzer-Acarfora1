@@ -1,7 +1,7 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
+# NAME: Alex Carfora 
+# DATE: 10/3/25
 # BRIEF DESCRIPTION:  
 
 
@@ -14,8 +14,22 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-
-
+print("=== Network Traffic Security Analyzer ===")
+port_number = int(input("Enter the port number: "))
+data_transfer = float(input("Enter the data transfer size in megabytes (MB): "))
+print()
+if (port_number == 22 or port_number == 3389) and data_transfer >= 100: 
+    risk_message = "HIGH RISK: Potential unauthorized remote access detected!"
+elif (port_number == 80) and data_transfer >= 100:
+    risk_message = "MEDIUM RISK: Large unencrypted data transfer detected."
+elif port_number == 443:
+    risk_message = "LOW RISK: Secure encrypted transfer detected."
+else:
+    risk_message = "UNKNOWN: Unrecognized traffic pattern."
+print("FIREWALL LOG:")
+print(f"Port: {port_number}, Transfer Size: {data_transfer} MB")
+print(f"Risk Assessment: {risk_message}")
+print("------------------------")
 
 
 
