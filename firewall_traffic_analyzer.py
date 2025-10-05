@@ -15,8 +15,8 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 print("=== Network Traffic Security Analyzer ===")
-port_number = int(input("Enter the port number: "))
-data_transfer = float(input("Enter the data transfer size in megabytes (MB): "))
+port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
+data_transfer = int(input("Enter the data transfer size in megabytes (MB): "))
 print()
 if (port_number == 22 or port_number == 3389) and data_transfer >= 100: 
     risk_message = "HIGH RISK: Potential unauthorized remote access detected!"
