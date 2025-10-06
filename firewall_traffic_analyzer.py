@@ -15,18 +15,23 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 print("=== Network Traffic Security Analyzer ===")
-#print()
+
 port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
 data_transfer = int(input("Enter the data transfer size in megabytes (MB): "))
-print()
-if (port_number == 22 or port_number == 3389) and data_transfer >= 100: 
+
+print()  # blank line before the log
+
+# Determine risk level
+if (port_number == 22 or port_number == 3389) and data_transfer >= 100:
     risk_message = "HIGH RISK: Potential unauthorized remote access detected!"
-elif (port_number == 80) and data_transfer >= 100:
+elif port_number == 80 and data_transfer > 100:
     risk_message = "MEDIUM RISK: Large unencrypted data transfer detected."
 elif port_number == 443:
     risk_message = "LOW RISK: Secure encrypted transfer detected."
 else:
     risk_message = "UNKNOWN: Unrecognized traffic pattern."
+
+# Print firewall log
 print("FIREWALL LOG:")
 print(f"Port: {port_number}, Transfer Size: {data_transfer} MB")
 print(f"Risk Assessment: {risk_message}")
