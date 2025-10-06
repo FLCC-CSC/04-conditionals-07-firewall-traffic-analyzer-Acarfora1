@@ -15,7 +15,7 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 print("=== Network Traffic Security Analyzer ===")
-print()
+#print()
 port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
 data_transfer = int(input("Enter the data transfer size in megabytes (MB): "))
 print()
